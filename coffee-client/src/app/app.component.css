@@ -1,0 +1,15 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+
+.mat-card {
+    margin-top: 2%;
+    margin-left: 40%;
+    margin-right:40%;
+
+}
+
+.mat-card .full-width {
+    width:100%;
+}
