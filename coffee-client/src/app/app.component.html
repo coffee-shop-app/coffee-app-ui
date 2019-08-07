@@ -1,4 +1,4 @@
-<div>
+
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <span>My Coffee App</span>
@@ -6,46 +6,4 @@
       <mat-icon>local_cafe</mat-icon>
     </mat-toolbar-row>
   </mat-toolbar>
-  <div>
-  <mat-card class="full-width">
-    <mat-card-title>
-      Place your order
-    </mat-card-title>
-    <mat-card-content>
-      <form>
-        <div>
-          <mat-form-field>
-              <mat-select placeholder = "Coffee Name">
-                 <mat-option *ngFor = "let coffee of coffees" [value] = "coffee.value">
-                    {{coffee.name}}
-                 </mat-option>
-              </mat-select>
-           </mat-form-field>
-          </div>
-          <div>
-           <mat-form-field>
-              <mat-select placeholder = "Coffee Type">
-                 <mat-option *ngFor = "let type of types" [value] = "type.value">
-                    {{type.name}}
-                 </mat-option>
-              </mat-select>
-           </mat-form-field>
-          </div>
-          <div>
-            <mat-form-field class="full-width">
-              <textarea matInput placeholder="Address"></textarea>
-            </mat-form-field>
-           </div>
-           <div>
-              <mat-slider min="1" max="10" step="1" thumbLabel></mat-slider>
-           </div>
-      </form>
-    </mat-card-content>
-    <mat-card-actions align="end">
-      <div>
-        <button mat-raised-button color="primary">Submit</button>
-      </div>
-   </mat-card-actions>
-  </mat-card>
-</div>
-</div>
+  <app-coffee></app-coffee>

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { Coffee } from './models/coffee.model';
-import { CoffeeTypes } from './models/coffeeTypes.model';
+
+import { CoffeeType } from './models/coffeeType.model';
+import { CoffeeService } from './services/coffee.service';
+import { CoffeeName } from './models/CoffeeName.model';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +11,20 @@ import { CoffeeTypes } from './models/coffeeTypes.model';
 })
 export class AppComponent {
 
-      coffees: Coffee[] = [
-        {name: 'Latte', value: 'Café Latte'},
-        {name: 'Cappuccino', value: 'Cappuccino'},
-        {name: 'Espresso', value: 'Espresso'}
-    ];
+  coffeeNames:CoffeeName[]=[];
+  coffeeTypes:CoffeeType[]=[];
 
-    types: CoffeeTypes[] = [
-      {name: 'Latte', value: 'Latte'},
-      {name: 'espresso', value: 'espresso'},
-      {name: 'cappuccino', value: 'cappuccino'}
-    ];
+  constructor(private coffeeService:CoffeeService){}
+
+  ngOnInit() {
+      this.coffeeService.getCoffeeNames().subscribe( data => {
+        this.coffeeNames = data;
+      });
+
+      this.coffeeService.getCoffeeTypes().subscribe( data => {
+        this.coffeeTypes = data;
+      });
+  };
+    
+
 }

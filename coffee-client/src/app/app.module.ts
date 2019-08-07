@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 
 // Material imports
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -15,17 +15,21 @@ import {MatSliderModule} from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
+import { CoffeeService } from './services/coffee.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CoffeeComponent } from './coffee/coffee.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CoffeeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
 
     //Material
     MatButtonModule,
@@ -36,7 +40,7 @@ import { from } from 'rxjs';
     MatSelectModule,
     MatSliderModule
   ],
-  providers: [],
+  providers: [CoffeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
