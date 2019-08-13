@@ -8,7 +8,7 @@
             <div>
               <mat-form-field>
                   <mat-select placeholder = "Coffee Name" [(ngModel)]="coffeeOrder.coffeeName">
-                    <mat-option *ngFor = "let coffee of coffeeNames" [value] = "coffee.coffeeName">
+                    <mat-option *ngFor = "let coffee of coffeeNames" [value] = "coffee">
                         {{coffee.coffeeName}}
                     </mat-option>
                   </mat-select>
@@ -17,7 +17,7 @@
               <div>
                 <mat-form-field>
                     <mat-select placeholder = "Coffee Type" [(ngModel)]="coffeeOrder.coffeeType">
-                      <mat-option *ngFor = "let type of coffeeTypes" [value] = "type.coffeeType">
+                      <mat-option *ngFor = "let type of coffeeTypes" [value] = "type">
                           {{type.coffeeType}}
                       </mat-option>
                     </mat-select>

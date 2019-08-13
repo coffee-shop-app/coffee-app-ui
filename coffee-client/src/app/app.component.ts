@@ -11,19 +11,12 @@ import { CoffeeName } from './models/CoffeeName.model';
 })
 export class AppComponent {
 
-  coffeeNames:CoffeeName[]=[];
-  coffeeTypes:CoffeeType[]=[];
+  
 
-  constructor(private coffeeService:CoffeeService){}
+  constructor(){}
 
   ngOnInit() {
-      this.coffeeService.getCoffeeNames().subscribe( data => {
-        this.coffeeNames = data;
-      });
-
-      this.coffeeService.getCoffeeTypes().subscribe( data => {
-        this.coffeeTypes = data;
-      });
+      
   };
     
 
